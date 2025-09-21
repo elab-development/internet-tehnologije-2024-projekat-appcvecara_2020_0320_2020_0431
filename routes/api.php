@@ -37,6 +37,7 @@ Route::post('/auth/login', function(Request $r){
     return ['token'=>$u->createToken('api')->plainTextToken];
 });
 
+
 Route::middleware('auth:sanctum')->get('/user', fn(Request $r)=>$r->user());
 Route::post('/auth/login', function(Request $r){
     $r->validate(['email'=>'required|email','password'=>'required']);
